@@ -1,0 +1,43 @@
+<div mdbModal #loginModal="mdbModal" class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h4 class="modal-title w-100font-weight-bold" id="loginModalLabel">{{ 'login.login' | translate }}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeLoginModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+       <div class="modal-body mx-3">
+    <form class='form-horizontal'  (ngSubmit)="onSubmit()" >
+    <div class='form-group'>
+    <div class="md-form mb-5">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input class='form-control validate' id='email' [(ngModel)]='user.email' name="email" type='text'>
+        <label data-error="wrong" data-success="right" for="email">{{ 'login.yourEmail' | translate }}</label>
+    </div>
+    </div>
+    <div class='form-group'>
+    <div class="md-form mb-4">
+       <i class="fa fa-lock prefix grey-text"></i>
+       <input class='form-control validate' id='password' [(ngModel)]='user.password' name="password" type='password'>
+       <label data-error="wrong" data-success="right" for="password">{{ 'login.yourPass' | translate }}</label>
+   </div>
+    </div>
+    <div class="d-flex justify-content-center text-red" *ngIf="(submited)">
+    	 <div *ngIf="message" class="alert alert-error">{{message.text}}</div>
+    </div>
+     <div class="d-flex justify-content-center">
+        <button class='btn btn-blue' >{{ 'login.login' | translate }}</button>
+     </div>
+    
+  </form>
+      </div>
+            <div class="modal-footer d-flex justify-content-center text-muted">
+        		<p class="mb-0">{{ 'login.haveAccount' | translate }}</p>
+       		 	<a routerLink="register" (click)="closeLoginModal()">{{ 'login.createAccount' | translate }}</a>
+     		 </div>
+    </div>
+  </div>
+</div>

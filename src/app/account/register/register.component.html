@@ -1,0 +1,84 @@
+
+<div>
+<h3>{{ 'register.title' | translate }}</h3>
+<hr/>     
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+            <div class="text-red" [hidden]="(!submitted || !error409)">User with email exist!</div>
+                <form name="form"  [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                <div class="form-group">
+                        <label for="firstName">{{ 'register.personal.firstName' | translate }}</label>
+                        <input type="text" class="form-control" name="firstName"  formControlName="firstName" 
+                          [ngClass]="{ 'is-invalid': f.firstName.invalid && (f.firstName.dirty), 'is-valid': f.firstName.valid }"  
+                           placeholder="{{ 'register.validation.firstNameEnter' | translate }}"/>
+                         <div *ngIf="f.firstName.invalid && (f.firstName.dirty)" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">{{ 'register.validation.firstNameReq' | translate }}</div>
+                            <div *ngIf="f.firstName.errors.pattern">{{ 'register.validation.onlyLetters' | translate }}</div>
+                            <div *ngIf="f.firstName.errors.maxlength">{{ 'register.validation.maxChars' | translate:{'chars' : '20'} }}</div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label for="lastName">{{ 'register.personal.lastName' | translate }}</label>
+                        <input type="text" class="form-control" name="lastName" formControlName="lastName"
+                        [ngClass]="{ 'is-invalid': f.lastName.invalid && (f.lastName.dirty), 'is-valid': f.lastName.valid }" 
+                        placeholder="{{ 'register.validation.lastNameEnter' | translate }}"/>
+                        <div *ngIf="f.lastName.invalid && (f.lastName.dirty)" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">{{ 'register.validation.lastNameReq' | translate }}</div>
+                             <div *ngIf="f.lastName.errors.pattern">{{ 'register.validation.onlyLetters' | translate }}</div>
+                             <div *ngIf="f.lastName.errors.maxlength">{{ 'register.validation.maxChars' | translate:{'chars' : '40'} }}</div>
+                    </div>
+					</div>
+
+                    <div class="form-group">
+                        <label for="email">{{ 'register.personal.email' | translate }}</label>
+                        <input type="text" class="form-control" name="email" formControlName="email"
+                        [ngClass]="{ 'is-invalid': (f.email.invalid || (submitted && error409)) && (f.email.dirty), 'is-valid': f.email.valid}" 
+                        placeholder="{{ 'register.validation.emailEnter' | translate }}" />
+                        <div *ngIf="f.email.invalid && (f.email.dirty)" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">{{ 'register.validation.emailReq' | translate }}</div>
+                            <div *ngIf="f.email.errors.email">{{ 'register.validation.enterCorrectEmail' | translate }}</div>
+                            <div *ngIf="f.email.errors.maxlength">{{ 'register.validation.maxChars' | translate:{'chars' : '30'} }}</div>
+                        </div>
+                    </div>
+         
+               		<div class="form-group">
+                        <label class="control-label" for="password">{{ 'register.personal.password' | translate }}</label>
+                        <input type="password" class="form-control" name="password" formControlName="password"
+                        [ngClass]="{ 'is-invalid': f.password.invalid && (f.password.dirty), 'is-valid': f.password.valid}" />
+                       <div *ngIf="f.password.invalid && (f.password.dirty)" class="invalid-feedback">
+                         <div *ngIf="f.password.errors.required">{{ 'register.validation.passwordReq' | translate }}</div>
+                         <div *ngIf="f.password.errors.minlength">{{ 'register.validation.minChars' | translate:{'chars' : '6'} }}</div>
+                    	</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="confirmPass">{{ 'register.personal.confirmPassword' | translate }}</label>
+                        <input type="password" class="form-control" name="confirmPass" formControlName="confirmPass"
+                         [ngClass]="{ 'is-invalid': (f.confirmPass.invalid || registerForm.errors?.mismatch) && (f.confirmPass.dirty), 'is-valid': f.confirmPass.valid}" />
+                       <div *ngIf="f.confirmPass.dirty" class="invalid-feedback">
+					 	 <div *ngIf="f.confirmPass.invalid && f.confirmPass.errors.required">{{ 'register.validation.passwordReq' | translate }}</div>
+					 	 <div *ngIf="f.confirmPass.valid && registerForm.errors?.mismatch">{{ 'register.validation.differentPass' | translate }}</div>
+					</div>
+                    </div>
+<div class="form-group">
+<div class="g-recaptcha" data-sitekey="6Lf7anUUAAAAAHobMeDJkbR_XPD2i1oMCxopVXkJ"></div>
+</div>
+                     <div class="form-group">
+                    <button class="btn btn-primary nextBtn pull-right" [disabled]="!registerForm.valid" type="submit">{{ 'register.personal.register' | translate }}</button>
+                    </div>
+
+                </form>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+     
