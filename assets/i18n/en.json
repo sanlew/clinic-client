@@ -1,0 +1,43 @@
+{
+    "register": {
+    	"title": "New user registration",
+        "personal": {
+            "firstName": "First name",
+            "lastName": "Last name",
+            "email": "Email",
+            "password": "Password",
+        	"confirmPassword": "Confirmation password",
+        	"register": "Register"
+        },
+        "validation": {
+            "firstNameReq": "First Name is required",
+            "firstNameEnter": "Enter your first name",
+            "onlyLetters": "Only letters are accepted",
+            "lastNameReq": "Last name is required",
+            "lastNameEnter": "Enter your last name",
+            "emailReq": "An email address is required",
+            "emailEnter": "Enter your email address",
+            "enterCorrectEmail": "Enter the correct email address",
+            "passwordReq": "The password is required",
+        	"minChars": "Enter a minimum of {{chars}} characters",
+        	"maxChars": "Enter a maximum of {{chars}} characters",
+        	"differentPass": "The entered passwords are different"
+        }
+    },
+     "login": {
+    	"createAccount": "Create account!",
+    	"haveAccount": "Don't Have an Account?",
+    	"yourEmail": "Your email",
+    	"yourPass": "Your password",
+    	"login": "Log in"
+    },
+     "navbar": {
+     	"welcome": "Welcome ",
+     	"home": "Home",
+     	"bookAppointment": "Book an appointment",
+     	"panel": "User panel",
+     	"logout": "Log out"
+     }
+    
+    
+}

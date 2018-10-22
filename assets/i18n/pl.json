@@ -1,0 +1,42 @@
+{
+    "register": {
+      	"title": "Rejestracja nowego użytkownika",
+        "personal": {
+            "firstName": "Imię",
+            "lastName": "Nazwisko",
+            "email": "Adres email",
+        	"password": "Hasło",
+        	"confirmPassword": "Potwierdź hasło",
+        	"register": "Rejestruj"
+        },
+        "validation": {
+            "firstNameReq": "Imię jest wymagane",
+            "firstNameEnter": "Wprowadź imię",
+            "onlyLetters": "Akceptowane są tylko litery",
+            "lastNameReq": "Nazwisko jest wymagane",
+            "lastNameEnter": "Wprowadź nazwisko",
+            "emailReq": "Adres email jest wymagany",
+            "emailEnter": "Wprowadź adres email",
+            "enterCorrectEmail": "Wprowadź poprawny adres email",
+            "passwordReq": "Hasło jest wymagane",
+        	"minChars": "Wprowadź minimum {{chars}} znaków",
+        	"maxChars": "Wprowadź maksimum {{chars}} znaków",
+        	"differentPass": "Wprowadzone hasła są różne"
+        }
+    },
+    "login": {
+    	"createAccount": "Zarejestruj się!",
+    	"haveAccount": "Nie masz jeszcze konta?",
+    	"yourEmail": "Email",
+    	"yourPass": "Hasło",
+    	"login": "Zaloguj się"
+    },
+     "navbar": {
+     	"welcome": "Witaj ",
+     	"home": "Strona główna",
+     	"bookAppointment": "Umów się",
+     	"panel": "Panel użytkownika",
+     	"logout": "Wyloguj się"
+     }
+    
+}
