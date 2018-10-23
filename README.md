@@ -22,6 +22,7 @@ Client
 2. npm install
 3. ng serve
 4. Go to http://localhost:4200/
+
 Server
 1. git clone https://github.com/sanlew/clinic-server.git
 2. mvn spring-boot:run
