@@ -1,9 +1,8 @@
 import { Component,OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { UserDTO } from '../../models/userDTO';
-import { Headers, Http, RequestOptions } from '@angular/http';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
+import { Router } from '@angular/router';
 import { AccountService } from '../../services/account.service';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, Subscription} from "rxjs";
 import { ModalDirective } from 'angular-bootstrap-md';
 import { AlertService } from '../../services/alert.service';
@@ -17,8 +16,6 @@ import { AlertService } from '../../services/alert.service';
 })
 export class LoginComponent implements OnInit, OnDestroy{
     
-  jwtHelper: JwtHelperService = new JwtHelperService();
-  accessToken: string;
   user:UserDTO;
   submited = false;
   message: any;

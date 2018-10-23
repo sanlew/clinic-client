@@ -13,7 +13,7 @@ import { User } from '../../models/user';
 })
 export class PanelComponent implements OnInit {
 
-user:Observable<any>
+user:Observable<User>
 
   constructor(private accountService:AccountService) { }
 
